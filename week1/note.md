@@ -37,3 +37,6 @@
       > 10000 &  
       > \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-  
       > 10100 = 20(dec)
+- Reference: 
+  - [知乎：JDK 源码中 HashMap 的 hash 方法原理是什么？](https://www.zhihu.com/question/20733617)
+  - [Bilibili: 马士兵教育，阿里二面：HashMap数据结构讲解、关键参数、源码分析](https://www.bilibili.com/video/BV1WA411t7dM?t=6035)
