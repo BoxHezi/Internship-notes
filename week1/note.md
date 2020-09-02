@@ -114,5 +114,71 @@
       1. `mvn comppile`：将 Java 源码编译为 class 文件
       2. `mvn test`： 测试，并生成测试报告
       3. `mvn clean`： 删除已编译的 class 文件
-      4. `mvn package`： 打包，默认为 jar 包，可在pom.xml中更改
+      4. `mvn package`： 打包，默认为 jar 包，可在 pom.xml 中更改
       5. `mvn install`： 将项目生成 jar 包
+
+---
+
+### Wednesday
+
+1. MySQL
+
+   1. 事务 4 个特性 （ACID）
+      1. Atomicity - 原子性。单个事务中的所有操作要被看为一个整体，一整个逻辑单元。这个逻辑单元中的语句，要么都执行，要么都不执行。
+      2. Consistency - 一致性。事务不能破坏关系数据的完整性以及业务逻辑上的一致性。例如，A 转钱给 B，无论事务成功与否，A 和 B 的存款总量应保持一致。
+      3. Isolation - 不同事务之间是独立存在的。当多个事务对同一数据进行处理时，必须等到前面的事务完成以后再执行。
+      4. Durability - 持久性。当事务成功执行以后，这个事务多数据库的改变应该是永久的。比如，事务成功执行以后，系统故障导致数据库崩溃，恢复后数据库中的数据应该和事务成功执行后的状态。
+   2. DDL - Data Definition Language - 数据定义语言
+      1. CREATE TABLE: 创建 table  
+         `CREATE TABLE <table name> {`  
+         `<属性名称> <数据类型> [NOT NULL/AUTO INCREMENT],`  
+         `<属性名称> <数据类型> [NOT NULL/AUTO INCREMENT],`  
+         `PRIMARY KEY (主键属性),`  
+         `}`
+         > 可以有多个属性共同组成主键
+      2. DROP TABLE: 删除 table  
+         `DROP TABLE <table name>`
+      3. ALTER TABLE: 改变 table
+         1. 添加 column  
+            `ALTER TABLE <table name>`  
+            `ADD COLUMN <属性名称> <数据类型> [NOT NULL/AUTO INCREMENT]`
+         2. 删除 column  
+            `ALTER TABLE <table name>`  
+            `DROP COLUMN <属性名称>`
+         3. 改变 column  
+            `ALTER TABLE <table name>`  
+            `ALTER COLUMN <属性名称> <数据类型> [NOT NULL/AUTO INCREMENT]`
+   3. DQL - Data Query Language - 数据查询语言
+      1. 基本语法:  
+         `SELECT <目标属性> FROM <table name> [WHERE条件] [ORDER BY条件]`
+         > 目标属性为"\*"时代表所选 table 中的所有属性
+      2. WHERE 条件 vs HAVING 条件  
+         WHERE 作用在每一条数据中,而不能作用在使用了汇总后的数据  
+         HAVING 可以作用在汇总后的数据
+         - [SQL Tutorial](https://www.sqltutorial.org/sql-having/)
+         - [GeeksforGeeks](https://www.geeksforgeeks.org/having-vs-where-clause-in-sql/)
+   4. DML - Data Manipulation Language - 数据操纵语言
+      1. 插入 - INSERT  
+         `INSERT INTO <table name> VALUES()`
+      2. 更新 - UPDATE  
+         `UPDATE <table name> SET <属性=值> WHERE条件`
+         > 务必添加 WHERE 条件，否则整张表的数据都会被更新
+      3. 删除 - DELETE  
+         `DELETE FROM <table name> WHERE条件`
+         > 务必添加 WHERE 条件，否则整张表的数据都会被删除
+   5. 存储引擎
+
+      1. InnoDB
+         1. 支持事务（ACID），行锁定，外键
+      2. MyISAM
+         1. 较高的插入、查询速度，但不支持事务（ACID）
+      3. Memory（HEAP）
+
+         1. 存放于内存中
+
+      > InnoDB 以及 MyISAM 都使用 B+ Tree  
+      > Reference:
+      >
+      > - [Mysql 存储引擎的区别和比较](https://blog.csdn.net/zgrgfr/article/details/74455547)
+      > - [MySQL - 常见的三种存储引擎](https://segmentfault.com/a/1190000012588602)
+      > - [YouTube B+ Tree Basic](https://www.youtube.com/playlist?list=PLI46DdbusvteROkxQi5sIXMZE0JblnjCh)
