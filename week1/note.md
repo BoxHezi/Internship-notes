@@ -215,6 +215,7 @@
       5. fail(): 直接 fail
 
 2. 动态规划 - Dynamic Programming
+
    1. 递归中存在重叠子问题(Overlapping subproblems)
       1. Recursion vs Dynamic Programming - Fibonacci used as exampe
          1. Time Complexity
@@ -224,7 +225,7 @@
             1. Dynamic Programming: O(1)
             2. Recursion: O(n)
                > [Dynamic Programming vs Recursion](https://weibeld.net/algorithms/recursion.html)
-         3.
    2. 遇到可以使用递归或动态规划解决的问题时,首先分析问题的出口
-   3. [Bilibili 动态规划(第一讲)](https://www.bilibili.com/video/BV18x411V7fm)
-   4. [Bilibili 动态规划(第二讲)](https://www.bilibili.com/video/BV12W411v7rd)
+
+   > [Bilibili 动态规划(第一讲)](https://www.bilibili.com/video/BV18x411V7fm)  
+   > [Bilibili 动态规划(第二讲)](https://www.bilibili.com/video/BV12W411v7rd)
