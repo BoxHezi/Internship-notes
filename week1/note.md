@@ -91,7 +91,7 @@
          1. `git checkout [files]` - 将指定文件从暂存区恢复到工作去，可同时指定多个文件，用空格隔开
          2. `git checkout .`- 将暂存区中所有文件恢复到工作区
          3. `git checkout [commit id]` - 将工作去恢复到指定的 commit
-   6. [git 工作流](./git-workflow.png)
+   6. [git 工作流](./img/git-workflow.png)
 
 2. Maven - [Tutorialspoint - Maven](https://www.tutorialspoint.com/maven/)
    1. Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理
@@ -182,3 +182,34 @@
       > - [Mysql 存储引擎的区别和比较](https://blog.csdn.net/zgrgfr/article/details/74455547)
       > - [MySQL - 常见的三种存储引擎](https://segmentfault.com/a/1190000012588602)
       > - [YouTube B+ Tree Basic](https://www.youtube.com/playlist?list=PLI46DdbusvteROkxQi5sIXMZE0JblnjCh)
+
+### Thursday
+
+1. 单元测试 JUnit Test
+
+   1. Junit 注解
+
+      1. @Before: 每一个测试例方法**被调用前**都会被调用
+      2. @After: 每一个测试例方法**被调用后**都会被调用
+      3. @Test: 被标注的方法为测试例方法
+      4. @BeforeClass: 在测试类**所有的**测试例方法被调用前被调用
+      5. @AfterClass: 在测试类**所有的**测试例方法被调用后被调用
+         > @BeforeClass 以及 @AfterClass 所标注的方法必须是**静态(static)方法**  
+         > [StackOverflow: Why must jUnit's fixtureSetup be static?](https://stackoverflow.com/questions/1052577/why-must-junits-fixturesetup-be-static)
+
+      > 代码执行逻辑为:  
+      > ExampleTest.beforeClass();
+      > ExampleTest test1 = new ExampleTest();  
+      > test1.before();  
+      > test1.test();  
+      > test1.after();  
+      > ExampleTest.afterClass();
+
+   2. Junit 断言 (assert)
+      1. assertTrue(条件): 若条件为 true, 则 pass, 否则 fail
+      2. assertFalse(条件): 若条件为 false, 则 pass, 否则 fail
+      3. assertEquals(expected, actual): 若 **expected.equals(actual)**, 则 pass, 否则 fail
+      4. assertSame(expected, actual): 若 **expected == actual**, 则 pass, 否则 fail
+      5. fail(): 直接 fail
+
+2.
