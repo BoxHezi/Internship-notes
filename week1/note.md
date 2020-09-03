@@ -183,6 +183,8 @@
       > - [MySQL - 常见的三种存储引擎](https://segmentfault.com/a/1190000012588602)
       > - [YouTube B+ Tree Basic](https://www.youtube.com/playlist?list=PLI46DdbusvteROkxQi5sIXMZE0JblnjCh)
 
+---
+
 ### Thursday
 
 1. 单元测试 JUnit Test
@@ -212,4 +214,17 @@
       4. assertSame(expected, actual): 若 **expected == actual**, 则 pass, 否则 fail
       5. fail(): 直接 fail
 
-2.
+2. 动态规划 - Dynamic Programming
+   1. 递归中存在重叠子问题(Overlapping subproblems)
+      1. Recursion vs Dynamic Programming - Fibonacci used as exampe
+         1. Time Complexity
+            1. Dynamic Programming: O(n)
+            2. Recursion: O(2^n)
+         2. Space COmplexity
+            1. Dynamic Programming: O(1)
+            2. Recursion: O(n)
+               > [Dynamic Programming vs Recursion](https://weibeld.net/algorithms/recursion.html)
+         3.
+   2. 遇到可以使用递归或动态规划解决的问题时,首先分析问题的出口
+   3. [Bilibili 动态规划(第一讲)](https://www.bilibili.com/video/BV18x411V7fm)
+   4. [Bilibili 动态规划(第二讲)](https://www.bilibili.com/video/BV12W411v7rd)
