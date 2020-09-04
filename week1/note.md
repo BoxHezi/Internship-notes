@@ -301,3 +301,5 @@
       StringBuilder 和 StringBuffer 可以通过 append()，insert()等方法进行修改  
       StringBuilder 速度快，线程不安全
       StringBuffer 速度慢，线程安全
+   - [java 中 String、StringBuffer 和 StringBuilder 的区别(简单介绍)](https://www.cnblogs.com/weibanggang/p/9455926.html)
+   - [String,StringBuffer 与 StringBuilder 的区别](https://blog.csdn.net/u011702479/article/details/82262823)
