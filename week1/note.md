@@ -162,10 +162,10 @@
          `INSERT INTO <table name> VALUES()`
       2. 更新 - UPDATE  
          `UPDATE <table name> SET <属性=值> WHERE条件`
-         > 务必添加 WHERE 条件，否则整张表的数据都会被更新
+         > **务必添加 WHERE 条件，否则整张表的数据都会被更新**
       3. 删除 - DELETE  
          `DELETE FROM <table name> WHERE条件`
-         > 务必添加 WHERE 条件，否则整张表的数据都会被删除
+         > **务必添加 WHERE 条件，否则整张表的数据都会被删除**
    5. 存储引擎
 
       1. InnoDB
