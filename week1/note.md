@@ -200,7 +200,7 @@
          > [StackOverflow: Why must jUnit's fixtureSetup be static?](https://stackoverflow.com/questions/1052577/why-must-junits-fixturesetup-be-static)
 
       > 代码执行逻辑为:  
-      > ExampleTest.beforeClass();
+      > ExampleTest.beforeClass();  
       > ExampleTest test1 = new ExampleTest();  
       > test1.before();  
       > test1.test();  
@@ -224,7 +224,7 @@
          2. Space COmplexity
             1. Dynamic Programming: O(1)
             2. Recursion: O(n)
-               > [Dynamic Programming vs Recursion](https://weibeld.net/algorithms/recursion.html)
+      > [Dynamic Programming vs Recursion](https://weibeld.net/algorithms/recursion.html)
    2. 遇到可以使用递归或动态规划解决的问题时,首先分析问题的出口
 
    > [Fibonacci in Java](https://github.com/BoxHezi/Internship-notes/blob/master/week1/code/Fibonacci.java)  
@@ -268,7 +268,7 @@
 | 归并排序 | O(n × log(n))  | O(n)       | True     |
 | 快速排序 | O(n × log(n))  | O(log(n))  | False    |
 
-> 稳定： 若 a == b，且排序前 a 在 b 的前面，则排序后 a 仍在 b 前
+> 稳定： 若 a == b，且排序前 a 在 b 的前面，则排序后 a 仍在 b 前  
 > 不稳定： 若 a == b，且排序前 a 在 b 的前面，排序后无法保证 a 仍在 b 前
 
 - [十大经典排序算法（动图演示）](https://www.cnblogs.com/onepixel/articles/7674659.html)
