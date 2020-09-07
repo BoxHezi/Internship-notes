@@ -1,23 +1,37 @@
-# Week 1 Notes
+# Week 2 Notes
+
+[Week1 Note](../week1/note.md)
 
 ## 学习任务
 
-- [ ] 学习《阿里巴巴 Java 开发手册》
-- [x] 学习 MySQL 数据库，git，maven，单元测试
-- [ ] 复习常见的数据结构&算法知识：
-  - [ ] 链表
-  - [ ] 树
-  - [x] 字符串
-  - [x] 查询算法
-  - [x] 排序算法
-  - [x] 贪心算法
-  - [x] 动态规划
-- [ ] 针对以上做思考归纳总结
+- [ ] 继续学习并更新 week1 中的内容
+- [ ] 研发流程拆解
+  - [ ] 系统分析
+  - [ ] 目标
+  - [ ] 图表
+    - [ ] User Case
+    - [ ] 活动图
+    - [ ] 系统架构图
+    - [ ] 时序图
+    - [ ] 数据库 ER
+  - [ ] 借口文档
+  - [ ] 研发计划
+
+## Mini Project
+
+### 淘宝摇一摇营销活动
+
+- 制作活动页, 增加产品曝光机会
+- 预计 PV(Page View) 1 亿, UV(Unique View) 3 千万
+- 活动持续 3 天
+- 每个用户抽奖中奖次数不超过 5 次
+- 每个品牌实物库存为 1000 - 5000
+- 平均中奖率 0.05%
 
 ## 下周抽查内容
 
-1. 抽查验收《阿里巴巴 Java 开发手册》学习情况
-2. 思考总结归纳文档
+1. mini project 系统分析初审评审
+2. week1 带完成事项更新 review
 
 ---
 
@@ -221,10 +235,8 @@
          1. Time Complexity
             1. Dynamic Programming: O(n)
             2. Recursion: O(2^n)
-         2. Space Complexity
-            1. Dynamic Programming: O(1)
-            2. Recursion: O(n)
-      > [Dynamic Programming vs Recursion](https://weibeld.net/algorithms/recursion.html)
+         2. Space Complexity 1. Dynamic Programming: O(1) 2. Recursion: O(n)
+            > [Dynamic Programming vs Recursion](https://weibeld.net/algorithms/recursion.html)
    2. 遇到可以使用递归或动态规划解决的问题时,首先分析问题的出口
 
    > [Fibonacci in Java](https://github.com/BoxHezi/Internship-notes/blob/master/week1/code/Fibonacci.java)  
