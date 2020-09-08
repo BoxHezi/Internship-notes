@@ -9,12 +9,12 @@
   - [ ] 系统分析
   - [ ] 目标
   - [ ] 图表
-    - [ ] User Case
-    - [ ] 活动图
+    - [x] User Case
+    - [x] 活动图
     - [ ] 系统架构图
     - [ ] 时序图
     - [ ] 数据库 ER 图
-  - [ ] 借口文档
+  - [ ] 接口文档
   - [ ] 研发计划
 
 ## Mini Project
@@ -74,6 +74,7 @@
 - [Use Case Diagram](https://app.lucidchart.com/invitations/accept/c604f695-b77c-4800-83f2-36b933ba5608)
 - [活动图](https://app.lucidchart.com/invitations/accept/19c5beb2-d64c-4e83-8fa5-f43a14d5dbe5)
 - [系统架构图](https://app.lucidchart.com/invitations/accept/6cae25c2-ab1a-4a13-848b-893f2a3300d8)
+> [图片文件](./img)
 
 ---
 
