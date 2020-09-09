@@ -71,9 +71,9 @@
 
 ### mini project 图表 (User Case, 活动图, 系统架构图)
 
-- [Use Case Diagram](https://app.lucidchart.com/invitations/accept/c604f695-b77c-4800-83f2-36b933ba5608)
-- [活动图](https://app.lucidchart.com/invitations/accept/19c5beb2-d64c-4e83-8fa5-f43a14d5dbe5)
-- [系统架构图](https://app.lucidchart.com/invitations/accept/6cae25c2-ab1a-4a13-848b-893f2a3300d8)
+- [LucidChart: Use Case Diagram](https://app.lucidchart.com/invitations/accept/c604f695-b77c-4800-83f2-36b933ba5608)
+- [LucidChart: 活动图](https://app.lucidchart.com/invitations/accept/19c5beb2-d64c-4e83-8fa5-f43a14d5dbe5)
+- [LucidChart: 系统架构图](https://app.lucidchart.com/invitations/accept/6cae25c2-ab1a-4a13-848b-893f2a3300d8)
 > [图片文件](./img)
 
 ---
@@ -81,6 +81,10 @@
 ## Wednesday
 
 ### mini project 图表 (时序图, 数据库 ER 图)
+
+- [LucidChart: Sequence Diagram](https://app.lucidchart.com/invitations/accept/62877ca3-4e00-44ba-8138-b22a010c4e0c)
+- [LucidChart: DB ER Diagram](https://app.lucidchart.com/invitations/accept/5eacf70a-89fb-45c8-a525-ba091ba42dfe)
+> [图片文件](./img)
 
 ---
 
