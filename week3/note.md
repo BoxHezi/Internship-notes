@@ -43,7 +43,7 @@ N/A
          7. update_time
       2. company
          1. id
-         2. company_name - uniqie
+         2. company_name - unique
          3. create_time
          4. update_time
       3. product
@@ -76,4 +76,17 @@ N/A
    3. 最终存储的 password: hash(salt + password)
    4. 登录时, 验证从数据库中根据用户名取得数据, 重新计算 hash(salt + password), 若匹配返回 true, 否则返回 false
 2. 测试用户注册登录模块
-   1. 
+   1. 注册
+      1. 接口 end point: /user/register
+      2. method: POST
+      3. 参数: username, password, type; 其中 type 1 为普通用户, 2 为企业用户
+      4. 返回: 若成功, 显示 register successfully; 若失败, 显示 register failed
+      5. [示例](./img/registerTest.png)
+      6. [注册成功后,数据库中的 password 为经过 hash 运算的数值](./img/registerDBExample.png)
+   2. 登录
+      1. 接口 end point: /user/login
+      2. method: POST
+      3. 参数: username, password
+      4. 返回: 若成功显示 login successfully; 若失败, 显示 login failed
+      5. [示例](./img/loginTest.png)
+      6. [失败示例](./img/loginTestFailed.png)
