@@ -48,16 +48,16 @@ N/A
          4. update_time
       3. product
          1. id
-         2. company_id - 与 company 表中的 id 形成外健
+         2. company_id - 与 company 表中的 id 形成外键
          3. product_name
          4. stock_count
          5. create_time
          6. update_time
       4. win_record
          1. id
-         2. company_id - 与 company 表中的 id 形成外健
+         2. company_id - 与 company 表中的 id 形成外键
          3. user_id - 与 user 表中的 id 形成外健
-         4. product_id - 与 product 表中的 id 形成外健
+         4. product_id - 与 product 表中的 id 形成外键
          5. create_time
          6. update_time
 2. 根据数据库表写 entity
@@ -70,8 +70,10 @@ N/A
 
 ## Friday
 
-1. [用户注册登录 password + salt](https://www.baeldung.com/java-password-hashing)
-   1. 使用 Java SecureRandom 随机生成 salt
-   2. 最终存储的 password: hash(salt + password)
-   3. 登录时, 验证从数据库中根据用户名取得数据, 重新计算 hash(salt + password), 若匹配返回 true, 否则返回 false
-   4.
+1. 用户注册登录模块
+   1. [用户注册登录 password + salt](https://www.baeldung.com/java-password-hashing)
+   2. 使用 Java SecureRandom 随机生成 salt
+   3. 最终存储的 password: hash(salt + password)
+   4. 登录时, 验证从数据库中根据用户名取得数据, 重新计算 hash(salt + password), 若匹配返回 true, 否则返回 false
+2. 测试用户注册登录模块
+   1. 
