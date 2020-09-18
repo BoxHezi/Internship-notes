@@ -2,19 +2,19 @@ package com.internship.shakeapp.controller;
 
 import com.internship.shakeapp.entity.User;
 import com.internship.shakeapp.service.impl.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
 @RequestMapping("user")
 public class UserController {
 
-    @Autowired
-    private UserServiceImpl userService;
+    private final UserServiceImpl userService;
+
+    public UserController(UserServiceImpl userService) {
+        this.userService = userService;
+    }
 
     @GetMapping
     public List<User> getAllUser() {
@@ -26,13 +26,14 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @PostMapping(value = "login")
+    public String login(@RequestBody User user) {
+        return userService.login(user) ? "Login Successfully" : "Login Failed";
+    }
+
     @PostMapping(value = "register")
-    @ResponseBody
-    public String registerUser(@RequestBody User user) {
-        System.out.println(user);
-//        String requestBody = request.getParameter("json");
-//        System.out.println(requestBody);
-        return "register user";
+    public String register(@RequestBody User user) {
+        return userService.register(user) ? "Register Successfully" : "Register Failed";
     }
 
 }
