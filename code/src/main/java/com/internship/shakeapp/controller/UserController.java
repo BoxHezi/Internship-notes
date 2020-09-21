@@ -28,12 +28,12 @@ public class UserController {
 
     @PostMapping(value = "login")
     public String login(@RequestBody User user) {
-        return userService.login(user) ? "Login Successfully" : "Login Failed";
+        return userService.login(user);
     }
 
     @PostMapping(value = "register")
     public String register(@RequestBody User user) {
-        return userService.register(user) ? "Register Successfully" : "Register Failed";
+        return userService.register(user);
     }
 
 }

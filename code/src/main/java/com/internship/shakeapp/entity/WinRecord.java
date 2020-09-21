@@ -4,42 +4,51 @@ import java.util.Date;
 
 public class WinRecord {
 
-    private int id;
-    private int userId;
-    private int companyId;
-    private int productId;
+    private Long id;
+    private Long userId;
+    private Long companyId;
+    private Long productId;
+    private Long drawId;
     private Date createTime;
     private Date updateTime;
 
-    public int getId() {
+    public Long getDrawId() {
+        return drawId;
+    }
+
+    public void setDrawId(Long drawId) {
+        this.drawId = drawId;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public int getCompanyId() {
+    public Long getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(int companyId) {
+    public void setCompanyId(Long companyId) {
         this.companyId = companyId;
     }
 
-    public int getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 

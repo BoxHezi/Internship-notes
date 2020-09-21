@@ -12,8 +12,8 @@ public interface UserService {
 
     User getUserByUsername(String username);
 
-    boolean login(User user);
+    String login(User user);
 
-    boolean register(User user);
+    String register(User user);
 
 }

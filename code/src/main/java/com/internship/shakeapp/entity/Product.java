@@ -4,26 +4,45 @@ import java.util.Date;
 
 public class Product {
 
-    private int id;
-    private int companyId;
+    private Long id;
+    private Long companyId;
     private String productName;
     private int stockCount;
     private Date createTime;
     private Date updateTime;
 
-    public int getId() {
+    private double salePrice;
+    private double promotionPrice;
+
+    public double getSalePrice() {
+        return salePrice;
+    }
+
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public double getPromotionPrice() {
+        return promotionPrice;
+    }
+
+    public void setPromotionPrice(double promotionPrice) {
+        this.promotionPrice = promotionPrice;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getCompanyId() {
+    public Long getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(int companyId) {
+    public void setCompanyId(Long companyId) {
         this.companyId = companyId;
     }
 

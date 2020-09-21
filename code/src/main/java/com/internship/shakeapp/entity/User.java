@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class User {
 
-    private int id;
+    private Long id;
     private String username;
-    private int winCount;
+//    private int winCount;
 
     private String password;
     private String salt;
@@ -56,11 +56,11 @@ public class User {
         this.updateTime = updateTime;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -72,11 +72,11 @@ public class User {
         this.username = username;
     }
 
-    public int getWinCount() {
-        return winCount;
-    }
-
-    public void setWinCount(int winCount) {
-        this.winCount = winCount;
-    }
+//    public int getWinCount() {
+//        return winCount;
+//    }
+//
+//    public void setWinCount(int winCount) {
+//        this.winCount = winCount;
+//    }
 }

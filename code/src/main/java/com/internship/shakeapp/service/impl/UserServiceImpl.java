@@ -4,6 +4,7 @@ import com.internship.shakeapp.dao.UserDAO;
 import com.internship.shakeapp.entity.User;
 import com.internship.shakeapp.service.UserService;
 import com.internship.shakeapp.utils.HashUtils;
+import com.internship.shakeapp.utils.StringUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -38,16 +39,20 @@ public class UserServiceImpl  implements UserService {
      * @return 当用户登录成功,返 回true, 否则false
      */
     @Override
-    public boolean login(User user) {
+    public String login(User user) {
         User tempUser = userDAO.getUserByUsername(user.getUsername());
         if (tempUser == null) {
-            return false;
+            return StringUtils.USER_NOT_EXISTED;
         }
 
         String testPass = tempUser.getSalt() + user.getPassword();
         String testPassHash = HashUtils.hashPassword(testPass);
 
-        return tempUser.getPassword().equals(testPassHash);
+        if (tempUser.getPassword().equals(testPassHash)) {
+            return StringUtils.LOGIN_SUCCESS;
+        } else {
+            return StringUtils.LOGIN_FAILED;
+        }
     }
 
     /**
@@ -56,8 +61,12 @@ public class UserServiceImpl  implements UserService {
      * @return 当用户注册成功, 返回true, 否则false
      */
     @Override
-    public boolean register(User user) {
-        user.setId(generateId()); // 生成并设置数据库中的ID
+    public String register(User user) {
+        if (checkExist(user.getUsername())) {
+            return StringUtils.USER_EXISTED;
+        }
+
+        user.setId(generateId()); // 并设置数据库中的ID
 
         // 生成随机salt
         String salt = HashUtils.generateSalt();
@@ -68,11 +77,15 @@ public class UserServiceImpl  implements UserService {
         String passwordHash = HashUtils.hashPassword(saltedPass);
         user.setPassword(passwordHash);
 
+        if (user.getType() == null) {
+            user.setType(1);
+        }
+
         try {
             userDAO.register(user);
-            return true;
+            return StringUtils.REGISTER_SUCCESS;
         } catch (Exception e) {
-            return false;
+            return StringUtils.REGISTER_FAILED;
         }
     }
 
@@ -80,9 +93,21 @@ public class UserServiceImpl  implements UserService {
      * 生成ID
      * @return 数据库中最大id + 1
      */
-    private int generateId() {
+    private Long generateId() {
         List<User> users = userDAO.getAll(true);
+        if (users.size() == 0) {
+            return 1L;
+        }
         User lastUser = users.get(0);
         return lastUser.getId() + 1;
+    }
+
+    /**
+     * 检查数据库中是否存在同名username
+     * @return 如果有同名的, 返回true, 否则返回false
+     */
+    private boolean checkExist(String username) {
+        User user = userDAO.getUserByUsername(username);
+        return user != null;
     }
 }
