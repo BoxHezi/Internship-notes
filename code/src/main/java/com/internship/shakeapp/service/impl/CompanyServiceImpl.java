@@ -58,15 +58,15 @@ public class CompanyServiceImpl implements CompanyService {
     public String addProduct(Product product, Long companyId) {
         Company company = companyDAO.getCompanyById(companyId);
         if (company == null) {
-            return "企业不存在";
+            return StringUtils.COMPANY_NOT_EXISTED;
         }
         try {
             product.setId(generateProductId());
             product.setCompanyId(companyId);
             productDAO.addProduct(product);
-            return "添加产品成功";
+            return StringUtils.ADD_PRODUCT_SUCCESS;
         } catch (Exception e) {
-            return "添加产品失败";
+            return StringUtils.ADD_PRODUCT_FAILED;
         }
     }
 

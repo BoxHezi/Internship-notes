@@ -1,0 +1,539 @@
+=====START 1 TEST=====
+10000
+5
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+3
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+4
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+2
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+3
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+4
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+6
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+4
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+2
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+2
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 35
+
+=============================
+=====START 1 TEST=====
+10000
+6
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+3
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+7
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+5
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+4
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+5
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+8
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+1
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+4
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+5
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 48
+
+=============================
+=====START 1 TEST=====
+10000
+0
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+6
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+7
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+3
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+3
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+4
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+7
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+6
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+6
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+4
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 46
+
+=============================
+=====START 1 TEST=====
+10000
+6
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+6
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+7
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+4
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+5
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+8
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+4
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+7
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+2
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+6
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 55
+
+=============================
+=====START 1 TEST=====
+10000
+3
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+3
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+5
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+3
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+4
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+7
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+6
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+6
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+4
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+6
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 47
+
+=============================
+=====START 1 TEST=====
+10000
+5
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+5
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+8
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+6
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+5
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+2
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+7
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+4
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+6
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+4
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 52
+
+=============================
+=====START 1 TEST=====
+10000
+11
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+4
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+5
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+8
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+4
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+9
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+3
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+8
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+2
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+8
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 62
+
+=============================
+=====START 1 TEST=====
+10000
+7
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+4
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+5
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+4
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+0
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+7
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+2
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+6
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+2
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+9
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 46
+
+=============================
+=====START 1 TEST=====
+10000
+6
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+9
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+4
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+10
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+3
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+3
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+6
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+1
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+9
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+4
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 55
+
+=============================
+=====START 1 TEST=====
+10000
+5
+=======END 1 TEST=====
+
+=====START 2 TEST=====
+10000
+4
+=======END 2 TEST=====
+
+=====START 3 TEST=====
+10000
+7
+=======END 3 TEST=====
+
+=====START 4 TEST=====
+10000
+5
+=======END 4 TEST=====
+
+=====START 5 TEST=====
+10000
+3
+=======END 5 TEST=====
+
+=====START 6 TEST=====
+10000
+5
+=======END 6 TEST=====
+
+=====START 7 TEST=====
+10000
+2
+=======END 7 TEST=====
+
+=====START 8 TEST=====
+10000
+5
+=======END 8 TEST=====
+
+=====START 9 TEST=====
+10000
+3
+=======END 9 TEST=====
+
+=====START 10 TEST=====
+10000
+7
+=======END 10 TEST=====
+
+Total Count: 100000
+Total Win Count: 46
+

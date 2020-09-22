@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Configuration 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.internship.shakeapp.dao.DrawDAO">
+
+    <resultMap id="BaseResultMap" type="com.internship.shakeapp.entity.Draw">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="win" property="win" jdbcType="TINYINT"/>
+        <result column="create_time" property="createTime" jdbcType="DATE"/>
+        <result column="update_time" property="updateTime" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="BaseColumnList">
+        id, user_id, win, create_time, update_time
+    </sql>
+
+    <select id="getAll" parameterType="java.lang.Boolean" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BaseColumnList"/>
+        FROM draw
+        <if test="descOrder != false">
+            ORDER BY id DESC
+        </if>
+    </select>
+
+    <insert id="newDraw" parameterType="com.internship.shakeapp.entity.Draw">
+        INSERT INTO
+        draw
+        VALUES
+        (#{id}, #{userId}, #{win}, now(), null)
+    </insert>
+</mapper>
