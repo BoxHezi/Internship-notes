@@ -1,6 +1,7 @@
 package com.internship.shakeapp.service;
 
 import com.internship.shakeapp.entity.Company;
+import com.internship.shakeapp.entity.Product;
 
 public interface CompanyService {
 
@@ -9,5 +10,7 @@ public interface CompanyService {
     Company getCompanyByName(String companyName);
 
     String register(Company company);
+
+    void addProduct(Product product);
 
 }

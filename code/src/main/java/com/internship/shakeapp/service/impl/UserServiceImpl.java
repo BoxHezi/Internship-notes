@@ -1,6 +1,7 @@
 package com.internship.shakeapp.service.impl;
 
 import com.internship.shakeapp.dao.UserDAO;
+import com.internship.shakeapp.entity.Company;
 import com.internship.shakeapp.entity.User;
 import com.internship.shakeapp.service.UserService;
 import com.internship.shakeapp.utils.HashUtils;
@@ -10,12 +11,14 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class UserServiceImpl  implements UserService {
+public class UserServiceImpl implements UserService {
 
     private final UserDAO userDAO;
+    private final CompanyServiceImpl companyService;
 
-    public UserServiceImpl(UserDAO userDAO) {
+    public UserServiceImpl(UserDAO userDAO, CompanyServiceImpl companyService) {
         this.userDAO = userDAO;
+        this.companyService = companyService;
     }
 
     @Override
@@ -35,8 +38,9 @@ public class UserServiceImpl  implements UserService {
 
     /**
      * 用户登录服务
+     *
      * @param user 用户登录信息,来自于post request
-     * @return 当用户登录成功,返 回true, 否则false
+     * @return 当用户登录成功, 返 回true, 否则false
      */
     @Override
     public String login(User user) {
@@ -57,6 +61,7 @@ public class UserServiceImpl  implements UserService {
 
     /**
      * 用户注册服务
+     *
      * @param user 用户注册信息,来自于post request
      * @return 当用户注册成功, 返回true, 否则false
      */
@@ -83,6 +88,16 @@ public class UserServiceImpl  implements UserService {
 
         try {
             userDAO.register(user);
+            if (user.getType() == 2) { // 当企业用户注册时,同时插入company表中
+                Company company = new Company();
+                company.setCompanyName(user.getUsername());
+                company.setUserId(user.getId());
+                try {
+                    companyService.register(company);
+                } catch (Exception e) {
+                    return StringUtils.REGISTER_FAILED;
+                }
+            }
             return StringUtils.REGISTER_SUCCESS;
         } catch (Exception e) {
             return StringUtils.REGISTER_FAILED;
@@ -91,6 +106,7 @@ public class UserServiceImpl  implements UserService {
 
     /**
      * 生成ID
+     *
      * @return 数据库中最大id + 1
      */
     private Long generateId() {
@@ -104,6 +120,7 @@ public class UserServiceImpl  implements UserService {
 
     /**
      * 检查数据库中是否存在同名username
+     *
      * @return 如果有同名的, 返回true, 否则返回false
      */
     private boolean checkExist(String username) {

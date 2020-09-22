@@ -2,6 +2,7 @@ package com.internship.shakeapp.service.impl;
 
 import com.internship.shakeapp.dao.CompanyDAO;
 import com.internship.shakeapp.entity.Company;
+import com.internship.shakeapp.entity.Product;
 import com.internship.shakeapp.service.CompanyService;
 import com.internship.shakeapp.utils.StringUtils;
 import org.springframework.stereotype.Component;
@@ -48,6 +49,11 @@ public class CompanyServiceImpl implements CompanyService {
         } catch (Exception e) {
             return StringUtils.REGISTER_FAILED;
         }
+    }
+
+    @Override
+    public void addProduct(Product product) {
+
     }
 
     private Long generateId() {

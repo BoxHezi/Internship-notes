@@ -1,6 +1,7 @@
 package com.internship.shakeapp.controller;
 
 import com.internship.shakeapp.entity.Company;
+import com.internship.shakeapp.entity.Product;
 import com.internship.shakeapp.service.impl.CompanyServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +29,12 @@ public class CompanyController {
     public String register(@RequestParam Company company) {
         companyService.register(company);
         return "注册成功";
+    }
+
+    @PostMapping(value = "{id}/addProduct")
+    public String addProduct(Product product) {
+        return "Add product";
+
     }
 
 }
