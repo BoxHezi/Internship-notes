@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Configuration 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.internship.shakeapp.dao.ProductDAO">
+
+    <resultMap id="BaseResultMap" type="com.internship.shakeapp.entity.Product">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="company_id" property="companyId" jdbcType="BIGINT"/>
+        <result column="product_name" property="productName" jdbcType="VARCHAR"/>
+        <result column="stock_count" property="stockCount" jdbcType="INTEGER"/>
+        <result column="sale_price" property="salePrice" jdbcType="DECIMAL"/>
+        <result column="promotion_price" property="promotionPrice" jdbcType="DECIMAL"/>
+        <result column="create_time" property="createTime" jdbcType="DATE"/>
+        <result column="update_time" property="updateTime" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="BaseColumnList">
+        id, company_id, product_name, stock_count, sale_price, promotion_price, create_time, update_time
+    </sql>
+
+    <select id="getAll" parameterType="java.lang.Boolean" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BaseColumnList"/>
+        FROM product
+        <if test="descOrder != false">
+            ORDER BY id DESC
+        </if>
+    </select>
+
+    <insert id="addProduct" parameterType="com.internship.shakeapp.entity.Product">
+        INSERT INTO
+        product
+        VALUES
+        (#{id}, #{companyId}, #{productName}, #{stockCount}, #{salePrice}, #{promotionPrice}, now(), null)
+    </insert>
+
+    <!--    <select id="getCompanyById" parameterType="java.lang.Long" resultMap="BaseResultMap">-->
+    <!--        SELECT-->
+    <!--        <include refid="BaseColumnList"/>-->
+    <!--        FROM company-->
+    <!--        WHERE id = #{id}-->
+    <!--    </select>-->
+
+    <!--    <select id="getCompanyByName" parameterType="java.lang.String" resultMap="BaseResultMap">-->
+    <!--        SELECT-->
+    <!--        <include refid="BaseColumnList"/>-->
+    <!--        FROM company-->
+    <!--        &lt;!&ndash;        WHERE company_name LIKE concat("%",#{companyName},"%")&ndash;&gt;-->
+    <!--        WHERE company_name = #{companyName}-->
+    <!--    </select>-->
+
+    <!--    <insert id="register" parameterType="com.internship.shakeapp.entity.Company">-->
+    <!--        INSERT INTO-->
+    <!--        company-->
+    <!--        VALUES-->
+    <!--        (#{id}, #{companyName}, #{userId}, now(), null)-->
+    <!--    </insert>-->
+</mapper>

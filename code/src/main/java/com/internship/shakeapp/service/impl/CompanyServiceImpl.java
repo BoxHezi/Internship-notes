@@ -1,6 +1,7 @@
 package com.internship.shakeapp.service.impl;
 
 import com.internship.shakeapp.dao.CompanyDAO;
+import com.internship.shakeapp.dao.ProductDAO;
 import com.internship.shakeapp.entity.Company;
 import com.internship.shakeapp.entity.Product;
 import com.internship.shakeapp.service.CompanyService;
@@ -13,9 +14,11 @@ import java.util.List;
 public class CompanyServiceImpl implements CompanyService {
 
     private final CompanyDAO companyDAO;
+    private final ProductDAO productDAO;
 
-    public CompanyServiceImpl(CompanyDAO companyDAO) {
+    public CompanyServiceImpl(CompanyDAO companyDAO, ProductDAO productDAO) {
         this.companyDAO = companyDAO;
+        this.productDAO = productDAO;
     }
 
     @Override
@@ -52,8 +55,19 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public void addProduct(Product product) {
-
+    public String addProduct(Product product, Long companyId) {
+        Company company = companyDAO.getCompanyById(companyId);
+        if (company == null) {
+            return "企业不存在";
+        }
+        try {
+            product.setId(generateProductId());
+            product.setCompanyId(companyId);
+            productDAO.addProduct(product);
+            return "添加产品成功";
+        } catch (Exception e) {
+            return "添加产品失败";
+        }
     }
 
     private Long generateId() {
@@ -63,5 +77,14 @@ public class CompanyServiceImpl implements CompanyService {
         }
         Company lastCompany = companies.get(0);
         return lastCompany.getId() + 1;
+    }
+
+    private Long generateProductId() {
+        List<Product> products = productDAO.getAll(true);
+        if (products.size() == 0) {
+            return 1L;
+        }
+        Product lastProduct = products.get(0);
+        return lastProduct.getId() + 1;
     }
 }

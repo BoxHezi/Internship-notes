@@ -11,6 +11,6 @@ public interface CompanyService {
 
     String register(Company company);
 
-    void addProduct(Product product);
+    String addProduct(Product product, Long companyId);
 
 }

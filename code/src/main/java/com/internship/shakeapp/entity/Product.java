@@ -8,25 +8,24 @@ public class Product {
     private Long companyId;
     private String productName;
     private int stockCount;
+    private Double salePrice;
+    private Double promotionPrice;
     private Date createTime;
     private Date updateTime;
 
-    private double salePrice;
-    private double promotionPrice;
-
-    public double getSalePrice() {
+    public Double getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(double salePrice) {
+    public void setSalePrice(Double salePrice) {
         this.salePrice = salePrice;
     }
 
-    public double getPromotionPrice() {
+    public Double getPromotionPrice() {
         return promotionPrice;
     }
 
-    public void setPromotionPrice(double promotionPrice) {
+    public void setPromotionPrice(Double promotionPrice) {
         this.promotionPrice = promotionPrice;
     }
 

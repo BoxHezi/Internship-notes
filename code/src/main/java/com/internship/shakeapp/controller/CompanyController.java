@@ -26,15 +26,14 @@ public class CompanyController {
     }
 
     @PostMapping(value = "register")
-    public String register(@RequestParam Company company) {
+    public String register(@RequestBody Company company) {
         companyService.register(company);
         return "注册成功";
     }
 
-    @PostMapping(value = "{id}/addProduct")
-    public String addProduct(Product product) {
-        return "Add product";
-
+    @PostMapping(value = "{companyId}/addProduct")
+    public String addProduct(@RequestBody Product product, @PathVariable Long companyId) {
+        return companyService.addProduct(product, companyId);
     }
 
 }
