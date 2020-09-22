@@ -8,86 +8,37 @@
 
 ## Monday
 
-1. 系统分析初步评审后图表更新
-   1. 完善时序图
-   2. 新增领域模型图
+1. companyController
+2. 添加商品模块
 
 ---
 
 ## Tuesday
 
-N/A
+1. 抽奖算法
+   1. 使用Java Random().nextInt()
+   2. [Math.random() vs Random().nextInt()](https://stackoverflow.com/questions/738629/math-random-versus-random-nextintint)
+      1. 根据测试, Random().nextInt()可以满足平均中奖率0.05%的需求
+      2. 测试次数: 100W, 中奖次数: 492, 中奖率: 0.0492%
+      3. [测试脚本](./drawAlgoTest.sh)
+      4. [测试结果](./testDrawResult.txt)
+      5. [测试截图](./testResultScreenShot.png)
+2. 增加entity Draw以及DrawDAO
+3. TODO
+   1. 根据抽奖结果获得促销价格
+   2. 检查实际库存
+   3. 若实际库存小于等于0, 重新分配奖品
 
 ---
 
 ## Wednesday
 
-1. [完善研发计划](../week2/摇一摇营销活动研发计划.docx)
-2. 开发环境搭建
-   1. [MyBatis 环境 notes](https://blog.csdn.net/zhoujiyu123/article/details/79786847)
-   2. [我在搭建 mybatis 时碰到的一系列问题](https://blog.csdn.net/sinat_35803474/article/details/82626572)
-   3. [application.properties vs application.yml](https://stackoverflow.com/questions/47462950/application-yml-vs-application-properties-for-spring-boot)
+
 
 ---
 
 ## Thursday
 
-1. 数据库表建立 **_所有表包含 id, create_time, update_time, 其中 id 为主键_**
-   1. 目前 4 张表
-      1. user 用户表
-         1. id
-         2. username - unique
-         3. password
-         4. salt
-         5. win_count
-         6. create_time
-         7. update_time
-      2. company
-         1. id
-         2. company_name - unique
-         3. create_time
-         4. update_time
-      3. product
-         1. id
-         2. company_id - 与 company 表中的 id 形成外键
-         3. product_name
-         4. stock_count
-         5. create_time
-         6. update_time
-      4. win_record
-         1. id
-         2. company_id - 与 company 表中的 id 形成外键
-         3. user_id - 与 user 表中的 id 形成外健
-         4. product_id - 与 product 表中的 id 形成外键
-         5. create_time
-         6. update_time
-2. 根据数据库表写 entity
-   ### **_与领域模型图有出入,需修改_**
-   2. 4 个 Java 类
-      1. User
-      2. Company
-      3. Product
-      4. WinRecord
+---
 
 ## Friday
-
-1. 用户注册登录模块
-   1. [用户注册登录 password + salt](https://www.baeldung.com/java-password-hashing)
-   2. 使用 Java SecureRandom 随机生成 salt
-   3. 最终存储的 password: hash(salt + password)
-   4. 登录时, 验证从数据库中根据用户名取得数据, 重新计算 hash(salt + password), 若匹配返回 true, 否则返回 false
-2. 测试用户注册登录模块
-   1. 注册
-      1. 接口 end point: /user/register
-      2. method: POST
-      3. 参数: username, password, type; 其中 type 1 为普通用户, 2 为企业用户
-      4. 返回: 若成功, 显示 register successfully; 若失败, 显示 register failed
-      5. [示例](./img/registerTest.png)
-      6. [注册成功后,数据库中的 password 为经过 hash 运算的数值](./img/registerDBExample.png)
-   2. 登录
-      1. 接口 end point: /user/login
-      2. method: POST
-      3. 参数: username, password
-      4. 返回: 若成功显示 login successfully; 若失败, 显示 login failed
-      5. [示例](./img/loginTest.png)
-      6. [失败示例](./img/loginTestFailed.png)
