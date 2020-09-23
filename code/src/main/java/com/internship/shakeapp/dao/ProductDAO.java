@@ -12,4 +12,6 @@ public interface ProductDAO {
 
     void addProduct(Product product);
 
+    void updateStockCount(Product product);
+
 }

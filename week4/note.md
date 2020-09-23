@@ -22,7 +22,7 @@
       2. 测试次数: 100W, 中奖次数: 492, 中奖率: 0.0492%
       3. [测试脚本](./drawAlgoTest.sh)
       4. [测试结果](./testDrawResult.txt)
-      5. [测试截图](./testResultScreenShot.png)
+      5. [测试截图](./img/testResultScreenShot.png)
 2. 增加entity Draw以及DrawDAO
 3. TODO
    1. 根据抽奖结果获得促销价格
@@ -33,6 +33,7 @@
 
 ## Wednesday
 
+https://docs.spring.io/spring-data/data-redis/docs/current/reference/html/#redis:setup
 
 
 ---

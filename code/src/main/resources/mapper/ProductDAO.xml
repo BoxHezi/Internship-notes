@@ -33,6 +33,15 @@
         (#{id}, #{companyId}, #{productName}, #{stockCount}, #{salePrice}, #{promotionPrice}, now(), null)
     </insert>
 
+    <update id="updateStockCount" parameterType="com.internship.shakeapp.entity.Product">
+        UPDATE
+        product
+        SET
+        stock_count = #{stockCount}
+        WHERE
+        id = #{id};
+    </update>
+
     <!--    <select id="getCompanyById" parameterType="java.lang.Long" resultMap="BaseResultMap">-->
     <!--        SELECT-->
     <!--        <include refid="BaseColumnList"/>-->

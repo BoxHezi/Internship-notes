@@ -4,5 +4,5 @@ public interface DrawService {
 
     String enterDraw(Long userId);
 
-    void newDraw(Long userId, int winIndicator);
+    void newDraw(Long userId, Long drawId, int winIndicator);
 }

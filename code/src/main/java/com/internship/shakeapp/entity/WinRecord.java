@@ -12,6 +12,13 @@ public class WinRecord {
     private Date createTime;
     private Date updateTime;
 
+    public WinRecord(Long productId, Long companyId, Long userId, Long drawId) {
+        this.productId = productId;
+        this.companyId = companyId;
+        this.userId = userId;
+        this.drawId = drawId;
+    }
+
     public Long getDrawId() {
         return drawId;
     }

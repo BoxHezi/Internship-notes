@@ -12,4 +12,6 @@ public interface WinRecordDAO {
 
     List<WinRecord> getWinRecordByUserId(Long userId);
 
+    void insertNewRecord(WinRecord winRecord);
+
 }
