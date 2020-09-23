@@ -10,6 +10,8 @@ public interface WinRecordDAO {
 
     List<WinRecord> getAllRecord(Boolean descOrder);
 
+    List<WinRecord> getLastFifty();
+
     List<WinRecord> getWinRecordByUserId(Long userId);
 
     void insertNewRecord(WinRecord winRecord);

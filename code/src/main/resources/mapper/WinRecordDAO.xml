@@ -38,6 +38,14 @@
         (#{id}, #{companyId}, #{userId}, #{productId}, #{drawId}, now(), null)
     </insert>
 
+    <select id="getLastFifty" resultMap="BaseResultMap">
+        SELECT
+        <include refid="BaseColumnList"/>
+        FROM win_record
+        ORDER BY id DESC
+        LIMIT 50
+    </select>
+
     <!--    <select id="getUserById" parameterType="java.lang.Long" resultMap="BaseResultMap">-->
     <!--        SELECT-->
     <!--        <include refid="BaseColumnList"/>-->

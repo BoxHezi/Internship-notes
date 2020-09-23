@@ -1,6 +1,6 @@
 package com.internship.shakeapp.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class WinRecord {
 
@@ -9,8 +9,8 @@ public class WinRecord {
     private Long companyId;
     private Long productId;
     private Long drawId;
-    private Date createTime;
-    private Date updateTime;
+    private Timestamp createTime;
+    private Timestamp updateTime;
 
     public WinRecord(Long productId, Long companyId, Long userId, Long drawId) {
         this.productId = productId;
@@ -59,19 +59,19 @@ public class WinRecord {
         this.productId = productId;
     }
 
-    public Date getCreateTime() {
+    public Timestamp getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
 
-    public Date getUpdateTime() {
+    public Timestamp getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
 }

@@ -1,18 +1,17 @@
 package com.internship.shakeapp.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class User {
 
     private Long id;
     private String username;
-//    private int winCount;
 
     private String password;
     private String salt;
 
-    private Date createTime;
-    private Date updateTime;
+    private Timestamp createTime;
+    private Timestamp updateTime;
 
     private Integer type;
 
@@ -40,19 +39,19 @@ public class User {
         this.salt = salt;
     }
 
-    public Date getCreateTime() {
+    public Timestamp getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
 
-    public Date getUpdateTime() {
+    public Timestamp getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -71,12 +70,4 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-
-//    public int getWinCount() {
-//        return winCount;
-//    }
-//
-//    public void setWinCount(int winCount) {
-//        this.winCount = winCount;
-//    }
 }
