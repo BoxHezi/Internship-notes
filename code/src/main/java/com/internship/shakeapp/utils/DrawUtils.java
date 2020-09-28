@@ -15,7 +15,7 @@ public class DrawUtils {
      * 10%的机率不通过风控检测
      * @return true通过风控哦检测, false未通过风控检测
      */
-    public static boolean riskCheck() {
+    public static boolean checkRisk() {
         int randomNum = new Random().nextInt(100);
         return randomNum > 9;
     }

@@ -1,6 +1,6 @@
 package com.internship.shakeapp.utils;
 
-public class StringUtils {
+public class ReturnMsgUtils {
 
     public static final String REGISTER_SUCCESS = "注册成功";
     public static final String REGISTER_FAILED = "注册失败";

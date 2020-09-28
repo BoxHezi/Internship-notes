@@ -11,6 +11,7 @@ public class HashUtils {
 
     /**
      * 计算hash值, 使用SHA-256
+     *
      * @param password 密码
      * @return hash值
      */
@@ -29,6 +30,7 @@ public class HashUtils {
 
     /**
      * 随机生成salt
+     *
      * @return salt String
      */
     public static String generateSalt() {

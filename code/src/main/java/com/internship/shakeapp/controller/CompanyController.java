@@ -5,6 +5,8 @@ import com.internship.shakeapp.entity.Product;
 import com.internship.shakeapp.service.impl.CompanyServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("company")
 public class CompanyController {
@@ -13,6 +15,11 @@ public class CompanyController {
 
     public CompanyController(CompanyServiceImpl companyService) {
         this.companyService = companyService;
+    }
+
+    @GetMapping()
+    public List<Company> getAllCompanies() {
+        return companyService.getAll();
     }
 
     @GetMapping(params = "id")
@@ -35,5 +42,21 @@ public class CompanyController {
     public String addProduct(@RequestBody Product product, @PathVariable Long companyId) {
         return companyService.addProduct(product, companyId);
     }
+
+
+    // Redis Test!!!!!!!!!!!!!!
+//    @GetMapping("all")
+//    public Map<Long, Company> testAll() {
+//        return companyService.getAllCompany();
+//    }
+//
+//    @GetMapping("testSave/{id}/{name}")
+//    public Company testSave(@PathVariable Long id, @PathVariable String name) {
+//        Company company = new Company();
+//        company.setId(id);
+//        company.setCompanyName(name);
+//        companyService.saveCompany(company);
+//        return companyService.findById(id);
+//    }
 
 }

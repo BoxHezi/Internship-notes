@@ -33,6 +33,7 @@ public class WinRecordServiceImpl implements WinRecordService {
     }
 
     private Long generateId() {
+        // TODO: mybatis set last insert id
         List<WinRecord> winRecords = winRecordDAO.getAllRecord(true);
         if (winRecords.size() == 0) {
             return 1L;

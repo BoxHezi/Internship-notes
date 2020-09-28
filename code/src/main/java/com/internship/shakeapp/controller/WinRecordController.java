@@ -13,6 +13,8 @@ import java.util.List;
 @RequestMapping("winRecord")
 public class WinRecordController {
 
+//    private final WinRecordServiceImpl winRecordService;
+
     private final WinRecordDAO winRecordDAO;
 
     public WinRecordController(WinRecordDAO winRecordDAO) {

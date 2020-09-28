@@ -5,7 +5,7 @@ import com.internship.shakeapp.entity.Company;
 import com.internship.shakeapp.entity.User;
 import com.internship.shakeapp.service.UserService;
 import com.internship.shakeapp.utils.HashUtils;
-import com.internship.shakeapp.utils.StringUtils;
+import com.internship.shakeapp.utils.ReturnMsgUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -46,16 +46,16 @@ public class UserServiceImpl implements UserService {
     public String login(User user) {
         User tempUser = userDAO.getUserByUsername(user.getUsername());
         if (tempUser == null) {
-            return StringUtils.USER_NOT_EXISTED;
+            return ReturnMsgUtils.USER_NOT_EXISTED;
         }
 
         String testPass = tempUser.getSalt() + user.getPassword();
         String testPassHash = HashUtils.hashPassword(testPass);
 
         if (tempUser.getPassword().equals(testPassHash)) {
-            return StringUtils.LOGIN_SUCCESS;
+            return ReturnMsgUtils.LOGIN_SUCCESS;
         } else {
-            return StringUtils.LOGIN_FAILED;
+            return ReturnMsgUtils.LOGIN_FAILED;
         }
     }
 
@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String register(User user) {
         if (checkExist(user.getUsername())) {
-            return StringUtils.USER_EXISTED;
+            return ReturnMsgUtils.USER_EXISTED;
         }
 
         user.setId(generateId()); // 并设置数据库中的ID
@@ -95,12 +95,12 @@ public class UserServiceImpl implements UserService {
                 try {
                     companyService.register(company);
                 } catch (Exception e) {
-                    return StringUtils.REGISTER_FAILED;
+                    return ReturnMsgUtils.REGISTER_FAILED;
                 }
             }
-            return StringUtils.REGISTER_SUCCESS;
+            return ReturnMsgUtils.REGISTER_SUCCESS;
         } catch (Exception e) {
-            return StringUtils.REGISTER_FAILED;
+            return ReturnMsgUtils.REGISTER_FAILED;
         }
     }
 
@@ -110,6 +110,7 @@ public class UserServiceImpl implements UserService {
      * @return 数据库中最大id + 1
      */
     private Long generateId() {
+        // TODO: mybatis set last insert id
         List<User> users = userDAO.getAll(true);
         if (users.size() == 0) {
             return 1L;
@@ -123,7 +124,7 @@ public class UserServiceImpl implements UserService {
      *
      * @return 如果有同名的, 返回true, 否则返回false
      */
-    private boolean checkExist(String username) {
+    private Boolean checkExist(String username) {
         User user = userDAO.getUserByUsername(username);
         return user != null;
     }

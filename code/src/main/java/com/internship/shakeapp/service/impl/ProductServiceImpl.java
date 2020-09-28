@@ -19,6 +19,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getRandomProduct() {
+        // TODO: 放缓存
         List<Product> products = productDAO.getAll(false);
         Product tempProduct;
         do {
@@ -29,11 +30,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public boolean checkStockCount(Product product) {
+        // TODO: 放缓存
         return product.getStockCount() > 0;
     }
 
     @Override
-    public void updateStockCount(Product product) {
+    public synchronized void updateStockCount(Product product) {
+        // TODO: 放缓存
         product.setStockCount(product.getStockCount() - 1);
         try {
             productDAO.updateStockCount(product);

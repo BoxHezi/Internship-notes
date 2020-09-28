@@ -5,7 +5,7 @@ import com.internship.shakeapp.entity.Draw;
 import com.internship.shakeapp.entity.Product;
 import com.internship.shakeapp.service.DrawService;
 import com.internship.shakeapp.utils.DrawUtils;
-import com.internship.shakeapp.utils.StringUtils;
+import com.internship.shakeapp.utils.ReturnMsgUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -28,6 +28,7 @@ public class DrawServiceImpl implements DrawService {
         this.productService = productService;
     }
 
+
     /**
      * 参与抽奖模块, 当用户中奖次数达到上限或未通过风控检测时,直接返回 谢谢参与, 否则进入抽奖
      *
@@ -36,32 +37,31 @@ public class DrawServiceImpl implements DrawService {
      */
     @Override
     public String enterDraw(Long userId) {
-        if (getWinCount(userId) >= WIN_UPPER_LIMIT || !DrawUtils.riskCheck()) {
-            return StringUtils.THX_MSG;
-        } else {
-            Long drawId = generateId(); // 生成抽奖记录ID
-            int drawResult = DrawUtils.calDrawResult();
+        if (getWinCount(userId) >= WIN_UPPER_LIMIT || !DrawUtils.checkRisk()) {
+            return ReturnMsgUtils.THX_MSG;
+        }
+        Long drawId = generateId(); // 生成抽奖记录ID
+        int drawResult = DrawUtils.calDrawResult();
 
-            if (drawResult > 500) { // 未中奖
-                newDraw(userId, drawId, NOT_WIN);
-                return StringUtils.THX_MSG;
-            } else {
-                Product winedProduct = productService.getRandomProduct();
+        if (drawResult > 500) { // 未中奖
+            newDraw(userId, drawId, NOT_WIN);
+            return ReturnMsgUtils.THX_MSG;
+        }
 
-                if (drawResult > 100) { // 二等奖
-                    newDraw(userId, drawId, SECOND_PRIZE);
+        Product winedProduct = productService.getRandomProduct();
 
-                    winRecordService.addNewRecord(winedProduct, userId, drawId);
-                    return StringUtils.SECOND_PRIZE_MSG + ": 恭喜您可以通过促销价: " + winedProduct.getPromotionPrice() +
-                            " 购买 \"" + winedProduct.getProductName() + "\", 商品原价: " + winedProduct.getSalePrice(); // 获得促销价奖励
-                } else { // 一等奖
-                    newDraw(userId, drawId, FIRST_PRIZE);
+        if (drawResult > 100) { // 二等奖
+            newDraw(userId, drawId, SECOND_PRIZE);
 
-                    winRecordService.addNewRecord(winedProduct, userId, drawId);
-                    productService.updateStockCount(winedProduct);
-                    return StringUtils.FIRST_PRIZE_MSG + ": 恭喜您获得 \"" + winedProduct.getProductName() + "\"!"; // 直接获得商品
-                }
-            }
+            winRecordService.addNewRecord(winedProduct, userId, drawId);
+            return ReturnMsgUtils.SECOND_PRIZE_MSG + ": 恭喜您可以通过促销价: " + winedProduct.getPromotionPrice() +
+                    " 购买 \"" + winedProduct.getProductName() + "\", 商品原价: " + winedProduct.getSalePrice(); // 获得促销价奖励
+        } else { // 一等奖
+            newDraw(userId, drawId, FIRST_PRIZE);
+
+            winRecordService.addNewRecord(winedProduct, userId, drawId);
+            productService.updateStockCount(winedProduct);
+            return ReturnMsgUtils.FIRST_PRIZE_MSG + ": 恭喜您获得 \"" + winedProduct.getProductName() + "\"!"; // 直接获得商品
         }
     }
 
@@ -85,10 +85,12 @@ public class DrawServiceImpl implements DrawService {
     }
 
     private int getWinCount(Long userId) {
+        // TODO: 放缓存
         return winRecordService.getWinRecordByUserId(userId).size();
     }
 
     private Long generateId() {
+        // TODO: mybatis set last insert id
         List<Draw> draws = drawDAO.getAll(true);
         if (draws.size() == 0) {
             return 1L;
